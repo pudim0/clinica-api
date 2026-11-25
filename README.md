@@ -186,7 +186,7 @@ No Postman, envie `GET {{baseUrl}}/` para conferir se a API está respondendo.
 
 ## Testes
 
-Os testes unitários de controllers e services usam providers mockados para verificar a configuração da injeção de dependências sem conectar ao MongoDB. O teste E2E inicializa o módulo completo da aplicação e verifica `GET /`; para executá-lo, mantenha o MongoDB disponível e configure `DATABASE_URL` no `.env`.
+Os testes unitários de controllers e services usam providers mockados e não precisam conectar ao MongoDB. Eles verificam o encaminhamento das operações pelos controllers e, nos services, a criação de registros, filtros e paginação, buscas por ID e tratamento de duplicidades e registros inexistentes. O teste E2E inicializa o módulo completo da aplicação e verifica `GET /`; para executá-lo, mantenha o MongoDB disponível e configure `DATABASE_URL` no `.env`.
 
 Execute os testes unitários:
 
